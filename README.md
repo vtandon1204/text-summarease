@@ -17,8 +17,8 @@ The **AI Text Summarizer** is a web application that utilizes state-of-the-art n
 ## Technologies Used
 
 - **Frontend**: HTML, CSS, JavaScript
-- **Backend**: Python, Flask
-- **NLP Model**: Hugging Face Transformers
+- **Backend**: Python, [Flask](https://flask.palletsprojects.com/)
+- **NLP Model**: [Hugging Face Transformers](https://huggingface.co/docs/transformers/index)
 - **Libraries**: `transformers`, `Flask`, `numpy`
 
 ## Installation
@@ -68,8 +68,10 @@ Contributions are welcome! If you would like to contribute, please follow these 
 5. Create a pull request.
 
 ## License
-This project is licensed under the MIT License - see the LICENSE file for details.
+
+This project is licensed under the [MIT License](https://github.com/vtandon1204/text-summarizer-project/blob/main/LICENSE) - see the [LICENSE](https://github.com/vtandon1204/text-summarizer-project/blob/main/LICENSE) file for details.
+
 
 ## Acknowledgments
-- Hugging Face Transformers for providing powerful NLP models.
-- Flask community for an amazing web framework.
+- [Hugging Face Transformers](https://huggingface.co/docs/transformers/index) for providing powerful NLP models.
+- [Flask](https://flask.palletsprojects.com/) community for an amazing web framework.
