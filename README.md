@@ -56,11 +56,9 @@ Ensure you have Python installed (3.6 or higher). You also need `pip` for packag
 ### Example Input
     ```
     The rise of artificial intelligence (AI) has led to significant changes in various industries. AI technologies are being used in healthcare, finance, education, and more to improve efficiency and provide better services.
-    ```
 ### Example Output
     ``` 
     AI technologies have transformed industries like healthcare and finance, enhancing efficiency and service quality.
-    ```
 ## Contributing
 
 Contributions are welcome! If you would like to contribute, please follow these steps:
