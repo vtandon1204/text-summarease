@@ -37,8 +37,8 @@ The **AI Text Summarizer** is a web application that utilizes state-of-the-art n
 
 Here are some snapshots of the application:
 
-![Main Interface](https://github.com/vtandon1204/text-summarizer-project/blob/main/images/snapshot1.png)  
-![Summary Result](https://github.com/vtandon1204/text-summarizer-project/blob/main/images/snapshot2.png)  
+![Main Interface](https://github.com/vtandon1204/text-summarizer-project/blob/main/snaps/flask03.jpg)  
+![Summary Result](https://github.com/vtandon1204/text-summarizer-project/blob/main/snaps/flask04.jpg)  
 ## Installation
 
 ### Prerequisites
