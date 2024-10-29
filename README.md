@@ -1,6 +1,6 @@
 # AI Text Summarizer
 
-![Project Logo](https://via.placeholder.com/150) <!-- Replace with your project logo if available -->
+<!-- ![Project Logo](https://via.placeholder.com/150) Replace with your project logo if available -->
 
 ## Overview
 
