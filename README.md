@@ -6,6 +6,18 @@
 
 The **AI Text Summarizer** is a web application that utilizes state-of-the-art natural language processing (NLP) techniques to summarize long pieces of text into concise summaries. The application is built using Flask for the backend and integrates with Hugging Face's Transformers library for text summarization. 
 
+### Table of Contents
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Installation](#installation)
+  - [Prerequisites](#prerequisites)
+  - [Steps to Install](#steps-to-install)
+- [Usage](#usage)
+- [Examples](#examples)
+- [Contributing](#contributing)
+- [License](#license)
+- [Acknowledgments](#acknowledgments)
+
 ## Features
 
 - **User-Friendly Interface**: A clean and interactive UI for seamless text input and summarization.
