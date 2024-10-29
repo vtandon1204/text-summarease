@@ -9,6 +9,12 @@
 #     print("Directory exists.")
 # if len(path) > 260:
 #     print("Path exceeds maximum length.")
-from pathlib import Path
-config_filepath = Path('config/config.yaml')
-print(f"Config file path: {config_filepath}")
+
+# from pathlib import Path
+# config_filepath = Path('config/config.yaml')
+# print(f"Config file path: {config_filepath}")
+
+from textSummarizer.pipeline.prediction import PredictionPipeline
+
+predictor = PredictionPipeline()
+print(predictor.predict("Sample text to summarize"))
