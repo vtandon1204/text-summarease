@@ -1,28 +1,33 @@
 from textSummarizer.pipeline.stage01_data_ingestion import DataIngestionTrainingPipeline  # type: ignore
 from textSummarizer.logging import logger
+from textSummarizer.pipeline.stage02_data_validation import DataValidationTrainingPipeline  # type: ignore
+from pathlib import Path
 
 STAGE_NAME = "Data Ingestion stage"
 try:
-   logger.info(f">>>>>> stage {STAGE_NAME} started <<<<<<") 
-   data_ingestion_pipeline = DataIngestionTrainingPipeline()  # Now this is a class instance
-   data_ingestion_pipeline.main()  # Now this works correctly
-   logger.info(f">>>>>> stage {STAGE_NAME} completed <<<<<<\n\nx==========x")
+    logger.info(f">>>>>> stage {STAGE_NAME} started <<<<<<") 
+    data_ingestion_pipeline = DataIngestionTrainingPipeline()  # Now this is a class instance
+    data_ingestion_pipeline.main()  # Now this works correctly
+    logger.info(f">>>>>> stage {STAGE_NAME} completed <<<<<<\n\nx==========x")
 except Exception as e:
-   logger.exception(e)
-   raise e
+    logger.exception(e)
+    raise e
+
+# Initialize ConfigurationManager with paths
+config_filepath = Path("config/config.yaml")
+params_filepath = Path("params.yaml")
 
 
+STAGE_NAME = "Data Validation stage"
+try:
+    logger.info(f">>>>>> stage {STAGE_NAME} started <<<<<<") 
+    data_validation = DataValidationTrainingPipeline()
+    data_validation.main()
+    logger.info(f">>>>>> stage {STAGE_NAME} completed <<<<<<\n\nx==========x")
+except Exception as e:
+    logger.exception(e)
+    raise e
 
-
-# STAGE_NAME = "Data Validation stage"
-# try:
-#    logger.info(f">>>>>> stage {STAGE_NAME} started <<<<<<") 
-#    data_validation = DataValidationTrainingPipeline()
-#    data_validation.main()
-#    logger.info(f">>>>>> stage {STAGE_NAME} completed <<<<<<\n\nx==========x")
-# except Exception as e:
-#         logger.exception(e)
-#         raise e
 
 
 

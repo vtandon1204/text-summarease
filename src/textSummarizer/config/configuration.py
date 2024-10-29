@@ -1,15 +1,15 @@
 from textSummarizer.constants import *
 from textSummarizer.utils.common import read_yaml, create_directories
 from textSummarizer.entity import (DataIngestionConfig)   
+from textSummarizer.entity import (DataValidationConfig)
 
 class ConfigurationManager:
     def __init__(self, 
-                 config_filepath: CONFIG_FILE_PATH, # type: ignore
-                 params_filepath: PARAMS_FILE_PATH): # type: ignore
-        self.config = read_yaml(config_filepath)
+                 config_filepath: Path = Path("config/config.yaml"), 
+                 params_filepath: Path = Path("params.yaml")):
+        self.config = read_yaml(config_filepath)  # Ensure this returns a dictionary
         self.params = read_yaml(params_filepath)
-        
-        create_directories([self.config.artifacts_root])  
+        create_directories([Path(self.config['artifacts_root'])])
 
     def get_data_ingestion_config(self) -> DataIngestionConfig:
         config = self.config.data_ingestion
@@ -23,3 +23,16 @@ class ConfigurationManager:
             unzip_dir=config.unzip_dir
         )
         return data_ingestion_config
+    
+    def get_data_validation_config(self) -> DataValidationConfig:
+        if 'data_validation' not in self.config:
+            raise AttributeError("data_validation section missing in config.yaml")
+
+        config = self.config['data_validation']  # Access as a dictionary
+        create_directories([Path(config['root_dir'])])  # Ensure directory exists
+
+        return DataValidationConfig(
+            root_dir=Path(config['root_dir']),  # Ensure it's a Path object
+            STATUS_FILE=config['STATUS_FILE'],
+            ALL_REQUIRED_FILES=config['ALL_REQUIRED_FILES'],
+        )
