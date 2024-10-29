@@ -1,0 +1,9 @@
+1. Introduction & GitHub repository setup 
+2. Project Template creation
+3. Project setup & Requirements installation 
+4. Logging, Utils & Exception module 
+5. Project workflows 
+6. All components notebook experiment 
+7. All components modular code implementation 
+8. Training Pipeline 
+9. Prediction Pipeline & User App creation
