@@ -11,7 +11,6 @@ class ModelTrainer:
         self.config = config
 
 
-    
     def train(self):
         device = "cuda" if torch.cuda.is_available() else "cpu"
         tokenizer = AutoTokenizer.from_pretrained(self.config.model_ckpt)
