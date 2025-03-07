@@ -1,6 +1,6 @@
-from textSummarizer.config.configuration import ConfigurationManager
-from textSummarizer.components.data_ingestion import DataIngestion
-from textSummarizer.logging import logger
+from src.textSummarizer.config.configuration import ConfigurationManager
+from src.textSummarizer.components.data_ingestion import DataIngestion
+from src.textSummarizer.logging import logger
 from pathlib import Path
 class DataIngestionTrainingPipeline:  # Changed to class definition
     def __init__(self):

@@ -1,6 +1,6 @@
-from textSummarizer.constants import *
-from textSummarizer.utils.common import read_yaml, create_directories
-from textSummarizer.entity import (DataIngestionConfig,
+from src.textSummarizer.constants import *
+from src.textSummarizer.utils.common import read_yaml, create_directories
+from src.textSummarizer.entity import (DataIngestionConfig,
                                    DataValidationConfig,
                                    DataTransformationConfig,
                                    ModelTrainerConfig,

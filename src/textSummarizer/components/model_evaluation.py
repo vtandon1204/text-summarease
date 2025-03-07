@@ -4,7 +4,7 @@ from evaluate import load
 import torch
 import pandas as pd
 from tqdm import tqdm
-from textSummarizer.entity import ModelEvaluationConfig
+from src.textSummarizer.entity import ModelEvaluationConfig
 
 
 

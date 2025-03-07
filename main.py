@@ -1,10 +1,10 @@
-from textSummarizer.logging import logger
+from src.textSummarizer.logging import logger
 from pathlib import Path
-from textSummarizer.pipeline.stage01_data_ingestion import DataIngestionTrainingPipeline  
-from textSummarizer.pipeline.stage02_data_validation import DataValidationTrainingPipeline  
-from textSummarizer.pipeline.stage03_data_transformation import DataTransformationTrainingPipeline
-from textSummarizer.pipeline.stage04_model_trainer import ModelTrainerTrainingPipeline
-from textSummarizer.pipeline.stage05_model_evaluation import ModelEvaluationTrainingPipeline
+from src.textSummarizer.pipeline.stage01_data_ingestion import DataIngestionTrainingPipeline  
+from src.textSummarizer.pipeline.stage02_data_validation import DataValidationTrainingPipeline  
+from src.textSummarizer.pipeline.stage03_data_transformation import DataTransformationTrainingPipeline
+from src.textSummarizer.pipeline.stage04_model_trainer import ModelTrainerTrainingPipeline
+from src.textSummarizer.pipeline.stage05_model_evaluation import ModelEvaluationTrainingPipeline
 
 STAGE_NAME = "Data Ingestion stage"
 try:

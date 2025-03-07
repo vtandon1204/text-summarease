@@ -1,6 +1,6 @@
-from textSummarizer.config.configuration import ConfigurationManager
-from textSummarizer.components.data_validation import DataValidation
-from textSummarizer.logging import logger
+from src.textSummarizer.config.configuration import ConfigurationManager
+from src.textSummarizer.components.data_validation import DataValidation
+from src.textSummarizer.logging import logger
 from pathlib import Path
 
 config_filepath = Path("config/config.yaml")  # Set the path to your config file
