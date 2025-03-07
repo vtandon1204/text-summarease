@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
     summarizeBtn.addEventListener("click", async () => {
         const text = textInput.value.trim();
         if (text === "") {
-            errorMessage.textContent = "Please enter some text to summarize.";
+            errorMessage.textContent = "Please enter some text to summarize";
             errorMessage.classList.remove("hidden");
             return;
         }
