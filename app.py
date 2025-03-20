@@ -25,6 +25,10 @@ def home():
 def favicon():
     return send_from_directory('static', 'favicon.ico', mimetype='image/vnd.microsoft.icon')
 
+@app.route('/static/script.js')
+def static_files(filename):
+    return send_from_directory(app.static_folder, filename)
+
 @app.route('/summarize', methods=['POST'])
 def summarize():
     try:
