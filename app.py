@@ -10,9 +10,10 @@ if project_root not in sys.path:
 
 from src.textSummarizer.pipeline.prediction import PredictionPipeline
 from flask import Flask, render_template, request, jsonify
+from flask_cors import CORS
 
 app = Flask(__name__, template_folder='templates')
-
+CORS(app)
 # Initialize the prediction pipeline
 predictor = PredictionPipeline()
 
@@ -22,14 +23,20 @@ def home():
 
 @app.route('/summarize', methods=['POST'])
 def summarize():
-    text = request.json.get('text', '')
-    if not text:
-        return jsonify({'error': 'No text provided'}), 400
+    try:
+        data = request.get_json()
+        if not data or "text" not in data:
+            return jsonify({"error": "Invalid request"}), 400
 
-    # Generate summary
-    summary = predictor.predict(text)
+        text = data["text"]
+        if not text.strip():
+            return jsonify({"error": "No text provided"}), 400
 
-    return jsonify({'summary': summary})
+        summary = predictor.predict(text)
+        return jsonify({"summary": summary})
+    except Exception as e:
+        print(f"Error: {e}")
+        return jsonify({"error": "Internal server error"}), 500
 
 def handler(event, context):
     return app(event, context)
