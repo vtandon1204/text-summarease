@@ -9,10 +9,10 @@ if project_root not in sys.path:
     sys.path.insert(0, project_root)
 
 from src.textSummarizer.pipeline.prediction import PredictionPipeline
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request, jsonify, send_from_directory
 from flask_cors import CORS
 
-app = Flask(__name__, template_folder='templates')
+app = Flask(__name__, template_folder='templates', static_folder='static')
 CORS(app)
 # Initialize the prediction pipeline
 predictor = PredictionPipeline()
@@ -20,6 +20,10 @@ predictor = PredictionPipeline()
 @app.route('/')
 def home():
     return render_template('index.html')
+
+@app.route('/favicon.ico')
+def favicon():
+    return send_from_directory('static', 'favicon.ico', mimetype='image/vnd.microsoft.icon')
 
 @app.route('/summarize', methods=['POST'])
 def summarize():
