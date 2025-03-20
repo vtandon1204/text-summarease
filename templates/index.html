@@ -1,52 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Text SummarEase</title>
-    <script src="{{ url_for('static', filename='script.js') }}"></script>
-    <link
-      rel="stylesheet"
-      href="{{ url_for('static', filename='styles.css') }}"
-    />
-    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" />
-  </head>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="icon" href="/static/tsfavicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/static/tsfavicon.ico" type="image/x-icon">
+    
+</head>
 
-  <body>
+<body>
     <div class="container">
-      <h1>AI Text Summarizer</h1>
-      <p class="subtitle">
-        Paste text below, and let our AI summarize it for you.
-      </p>
+        <h1>AI Text Summarizer</h1>
+        <p class="subtitle">Paste text below, and let our AI summarize it for you.</p>
 
-      <!-- Text area with character counter -->
-      <div class="textarea-container">
-        <textarea
-          id="textInput"
-          maxlength="5000"
-          placeholder="Paste your text here..."
-        ></textarea>
-        <span id="charCount" class="safe-count">0 / 5000</span>
-      </div>
+        <!-- Text area with character counter -->
+        <div class="textarea-container">
+            <textarea id="textInput" maxlength="5000" placeholder="Paste your text here..."></textarea>
+            <span id="charCount" class="safe-count">0 / 5000</span>
+        </div>
 
-      <!-- Buttons for generating summary and clearing input -->
-      <div class="button-container">
-        <button id="summarizeBtn">
-          <span>Generate Summary</span>
-          <div class="spinner hidden"></div>
-        </button>
-        <button id="clearBtn">Clear</button>
-      </div>
+        <!-- Buttons for generating summary and clearing input -->
+        <div class="button-container">
+            <button id="summarizeBtn">
+                <span>Generate Summary</span>
+                <div class="spinner hidden"></div>
+            </button>
+            <button id="clearBtn">Clear</button>
+        </div>
 
-      <!-- Summary result area -->
-      <div id="result" class="hidden">
-        <h2>Summary:</h2>
-        <p id="summaryText"></p>
-      </div>
+        <!-- Summary result area -->
+        <div id="result" class="hidden">
+            <h2>Summary:</h2>
+            <p id="summaryText"></p>
+        </div>
 
-      <!-- Error message area -->
-      <div id="errorMessage" class="hidden"></div>
+        <!-- Error message area -->
+        <div id="errorMessage" class="hidden"></div>
     </div>
 
-  </body>
+    <script src="/static/script.js"></script>
+</body>
+
 </html>
