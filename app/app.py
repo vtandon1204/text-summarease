@@ -31,8 +31,8 @@ def summarize():
 
     return jsonify({'summary': summary})
 
+def handler(event, context):
+    return app(event, context)
+
 if __name__ == '__main__':
     app.run(host="127.0.0.1", port=5000, debug=True)
-
-# def handler(event, context):
-#     return app(event, context)
