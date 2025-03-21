@@ -9,25 +9,19 @@ if project_root not in sys.path:
     sys.path.insert(0, project_root)
 
 from src.textSummarizer.pipeline.prediction import PredictionPipeline
-from flask import Flask, render_template, request, jsonify, send_from_directory
+from flask import Flask, render_template, request, jsonify
 from flask_cors import CORS
 
+# Initialize Flask app
 app = Flask(__name__, template_folder='templates', static_folder='static')
 CORS(app)
+
 # Initialize the prediction pipeline
 predictor = PredictionPipeline()
 
 @app.route('/')
 def home():
     return render_template('index.html')
-
-@app.route('/favicon.ico')
-def favicon():
-    return send_from_directory('static', 'favicon.ico', mimetype='image/vnd.microsoft.icon')
-
-@app.route('/static/script.js')
-def static_files(filename):
-    return send_from_directory(app.static_folder, filename)
 
 @app.route('/summarize', methods=['POST'])
 def summarize():
@@ -36,8 +30,8 @@ def summarize():
         if not data or "text" not in data:
             return jsonify({"error": "Invalid request"}), 400
 
-        text = data["text"]
-        if not text.strip():
+        text = data["text"].strip()
+        if not text:
             return jsonify({"error": "No text provided"}), 400
 
         summary = predictor.predict(text)
@@ -45,9 +39,6 @@ def summarize():
     except Exception as e:
         print(f"Error: {e}")
         return jsonify({"error": "Internal server error"}), 500
-
-def handler(event, context):
-    return app(event, context)
 
 if __name__ == '__main__':
     app.run(host="127.0.0.1", port=5000, debug=True)
